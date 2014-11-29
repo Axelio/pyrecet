@@ -1,3 +1,4 @@
+# -*- coding: UTF8 -*-
 from django.db import models
 
 
@@ -26,7 +27,7 @@ class TipoReceta(models.Model):
 class Ingrediente(models.Model):
     receta = models.ForeignKey('Receta')
     ingrediente = models.ForeignKey('IngredienteDetalle')
-    porcion = models.PositiveIntegerField()
+    porcion = models.PositiveIntegerField(verbose_name=u'porción')
     cantidad = models.DecimalField(max_digits=100, decimal_places=3)
     unidades = models.BooleanField(default=False)
 
@@ -50,6 +51,7 @@ class IngredienteDetalle(models.Model):
 class Preparacion(models.Model):
     paso = models.PositiveIntegerField()
     detalle = models.TextField()
+    receta = models.ForeignKey('Receta')
 
     class Meta:
         db_table = 'preparacion'
@@ -61,7 +63,7 @@ class Preparacion(models.Model):
 
 class Rendimiento(models.Model):
     receta = models.ForeignKey('Receta')
-    porcion = models.PositiveIntegerField()
+    porcion = models.PositiveIntegerField(verbose_name=u'porción')
     cantidad = models.DecimalField(max_digits=100, decimal_places=3)
     unidades = models.BooleanField(default=False)
     observaciones = models.BooleanField(default=False)
