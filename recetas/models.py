@@ -26,8 +26,8 @@ class TipoReceta(models.Model):
 class Ingrediente(models.Model):
     receta = models.ForeignKey('Receta')
     ingrediente = models.ForeignKey('IngredienteDetalle')
-    porcion = models.IntegerPositiveField()
-    cantidad = models.DecimalFields(digits=100, max_decimals=3)
+    porcion = models.PositiveIntegerField()
+    cantidad = models.DecimalField(max_digits=100, decimal_places=3)
     unidades = models.BooleanField(default=False)
 
     class Meta:
@@ -48,7 +48,7 @@ class IngredienteDetalle(models.Model):
 
 
 class Preparacion(models.Model):
-    paso = models.IntegerPositiveField()
+    paso = models.PositiveIntegerField()
     detalle = models.TextField()
 
     class Meta:
@@ -61,8 +61,8 @@ class Preparacion(models.Model):
 
 class Rendimiento(models.Model):
     receta = models.ForeignKey('Receta')
-    porcion = models.IntegerPositiveField()
-    cantidad = models.DecimalFields(digits=100, max_decimals=3)
+    porcion = models.PositiveIntegerField()
+    cantidad = models.DecimalField(max_digits=100, decimal_places=3)
     unidades = models.BooleanField(default=False)
     observaciones = models.BooleanField(default=False)
 
