@@ -1,0 +1,37 @@
+[
+{
+    "fields": {
+        "nombre": "Desayuno"
+    },
+    "model": "recetas.tiporeceta",
+    "pk": 1
+},
+{
+    "fields": {
+        "nombre": "Almuerzo"
+    },
+    "model": "recetas.tiporeceta",
+    "pk": 2
+},
+{
+    "fields": {
+        "nombre": "Cena"
+    },
+    "model": "recetas.tiporeceta",
+    "pk": 3
+},
+{
+    "fields": {
+        "nombre": "Merienda"
+    },
+    "model": "recetas.tiporeceta",
+    "pk": 4
+},
+{
+    "fields": {
+        "nombre": "Bebida"
+    },
+    "model": "recetas.tiporeceta",
+    "pk": 5
+}
+]
