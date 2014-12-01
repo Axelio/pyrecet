@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>{% block head_title %}Recetario{% endblock %}</title>
+    </head>
+    <body>
+        <h1>{% block title %}Recetario{% endblock %}</h1>
+        {% block content %}
+
+            <form action="" method="post">{% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit"/>
+            </form>
+
+        {% endblock %}
+
+        {% block footer %}
+            <hr>
+            <p>Thanks for visiting my site.</p>
+        {% endblock %}
+    </body>
+</html>
