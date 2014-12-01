@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+<html lang="es">
+<head>
+    <title>{% block title %}Recetario{% endblock %}</title>
+</head>
+<body>
+    <h1>Recetas</h1>
+    {% block content %}
+
+        Recetas buscadas:
+        {% for receta in receta_list %}
+            {{ receta }}
+        {% empty %}
+            No se encontró ninguna receta
+        {% endfor %}
+
+    {% endblock %}
+</body>
+</html>
