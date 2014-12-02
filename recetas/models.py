@@ -28,7 +28,9 @@ class Ingrediente(models.Model):
     receta = models.ForeignKey('Receta')
     ingrediente = models.ForeignKey('IngredienteDetalle')
     porcion = models.PositiveIntegerField(verbose_name=u'porción')
-    cantidad = models.DecimalField(max_digits=100, decimal_places=3)
+    cantidad = models.DecimalField(max_digits=100,
+                                   decimal_places=3,
+                                   help_text='En gramos.')
     unidades = models.BooleanField(default=False)
 
     class Meta:
@@ -64,9 +66,11 @@ class Preparacion(models.Model):
 class Rendimiento(models.Model):
     receta = models.ForeignKey('Receta')
     porcion = models.PositiveIntegerField(verbose_name=u'porción')
-    cantidad = models.DecimalField(max_digits=100, decimal_places=3)
+    cantidad = models.DecimalField(max_digits=100,
+                                   decimal_places=3,
+                                   help_text='En gramos.')
     unidades = models.BooleanField(default=False)
-    observaciones = models.BooleanField(default=False)
+    observaciones = models.TextField(blank=True)
 
     class Meta:
         db_table = 'rendimiento'

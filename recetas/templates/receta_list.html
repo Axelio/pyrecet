@@ -9,11 +9,13 @@
     {% block content %}
 
         Recetas buscadas:
+        <ul>
         {% for receta in receta_list %}
-            {{ receta }}
+            <li>{{ receta }}</li>
         {% empty %}
             No se encontró ninguna receta
         {% endfor %}
+        </ul>
 
     {% endblock %}
 </body>
